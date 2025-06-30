@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="author" content="{{ site.author.name }}">
+    
+    <style>
+        body { 
+            font-family: Georgia, serif; 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 20px; 
+            line-height: 1.6; 
+            color: #333;
+            background-color: #fafafa;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 20px;
+        }
+        
+        .site-title {
+            font-size: 32px;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .site-subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        .nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .nav a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                margin: 20px auto;
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 25px;
+            }
+        }
+    </style>
+    
+    {% if page.custom_css %}
+        {{ page.custom_css }}
+    {% endif %}
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="{{ site.baseurl }}/" class="site-title">{{ site.title }}</a>
+            <div class="site-subtitle">{{ site.subtitle }}</div>
+            <nav class="nav">
+                <a href="{{ site.baseurl }}/">Home</a>
+                <a href="{{ site.baseurl }}/blog/">Blog</a>
+                <a href="mailto:{{ site.author.email }}">Contact</a>
+            </nav>
+        </header>
+        
+        <main>
+            {{ content }}
+        </main>
+        
+        <footer class="footer">
+            <p>&copy; 2025 {{ site.author.name }} - {{ site.subtitle }}</p>
+            <p>
+                <a href="mailto:{{ site.author.email }}">Email</a> • 
+                <a href="https://github.com/{{ site.author.github }}">GitHub</a> • 
+                <a href="https://linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
