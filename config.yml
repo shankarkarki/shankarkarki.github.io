@@ -1,0 +1,44 @@
+# Site settings
+title: Shankar Karki
+subtitle: Energy Quant
+description: Making Energy Markets Computable. I build optimization and forecasting algorithms for electricity markets.
+baseurl: ""
+url: "https://yourusername.github.io"
+
+# Author
+author:
+  name: Shankar Karki
+  email: shankar.karki660@gmail.com
+  github: shankarkarki
+  linkedin: shankar-karki
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Shankar Karki"
+
+# Exclude files
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
