@@ -1,0 +1,51 @@
+# Site settings
+title: "Shankar Karki - Energy Quant"
+description: "Making Energy Markets Computable"
+baseurl: "/jekyll-blog"
+url: "https://shankarkarki.github.io"
+author: "Shankar Karki"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Math support
+kramdown:
+  math_engine: mathjax
+  input: GFM
+  syntax_highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:title/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Shankar Karki"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Include MathJax
+mathjax: true
+
+# Use regular CSS instead of SCSS for now
+sass:
+  style: expanded
+  sourcemap: never

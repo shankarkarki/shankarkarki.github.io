@@ -1,0 +1,19 @@
+<div class="visualization-section">
+    {% if include.title %}
+    <h3>{{ include.title }}</h3>
+    {% endif %}
+    
+    <div class="chart-container">
+        <canvas data-chart="{{ include.type }}" 
+                {% if include.id %}id="{{ include.id }}"{% endif %}
+                {% if include.height %}style="height: {{ include.height }}px;"{% endif %}
+                {% if include.options %}data-options='{{ include.options | jsonify }}'{% endif %}>
+        </canvas>
+    </div>
+    
+    {% if include.description %}
+    <div class="graph-explanation">
+        {{ include.description | markdownify }}
+    </div>
+    {% endif %}
+</div>

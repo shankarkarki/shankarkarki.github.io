@@ -1,0 +1,10 @@
+<div class="dashboard-container">
+    <h3>{{ include.title | default: "Real-Time Shadow Price Calculator" }}</h3>
+    <p>{{ include.description | default: "Adjust the parameters below to see how shadow prices respond to changing market conditions." }}</p>
+    
+    <div class="shadow-price-dashboard" 
+         data-component="shadow-price-calculator"
+         {% if include.config %}data-config="{{ include.config }}"{% endif %}>
+        <!-- Component will be initialized by JavaScript -->
+    </div>
+</div>

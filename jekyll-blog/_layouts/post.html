@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<article class="article-container typography">
+    <header class="article-header">
+        <h1>{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <p class="subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+        
+        <div class="article-meta">
+            <span>By <strong>{{ page.author | default: site.author }}</strong></span> | 
+            <span>Published: {{ page.date | date: "%B %d, %Y" }}</span>
+            {% if page.reading_time %}
+            | <span class="reading-time">📖 {{ page.reading_time }}</span>
+            {% endif %}
+        </div>
+    </header>
+    
+    <div class="article-content">
+        {{ content }}
+    </div>
+    
+    {% if page.tags %}
+    <footer class="article-footer">
+        <div class="tags">
+            {% for tag in page.tags %}
+            <span class="tag">#{{ tag }}</span>
+            {% endfor %}
+        </div>
+    </footer>
+    {% endif %}
+</article>
