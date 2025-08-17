@@ -3,7 +3,7 @@ title: Shankar Karki
 subtitle: Energy Quant
 description: Making Energy Markets Computable. I build optimization and forecasting algorithms for electricity markets.
 baseurl: ""
-url: "https://yourusername.github.io"
+url: "https://shankarkarki.github.io"  # ✅ FIXED: Your actual domain
 
 # Author
 author:
@@ -21,6 +21,11 @@ permalink: /blog/:title/
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag  # ✅ ADDED: For better SEO
+
+# Math rendering (✅ ADDED for your MLF equations)
+kramdown:
+  math_engine: mathjax
 
 # Collections
 collections:
